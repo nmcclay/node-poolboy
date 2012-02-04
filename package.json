@@ -1,0 +1,2 @@
+{ "name" : "poolboy",
+  "main" : "./poolboy.js" }
