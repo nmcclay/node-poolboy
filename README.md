@@ -17,6 +17,7 @@ TCP requests on port 5000 will now setup a new socket and return the socket port
 	
 ### Serving cross domain policy documents:
 currently supports unity/flash cross domain policy format
+
 	poolboy.crossPolicyEnabled = true;
 	poolboy.crossPolicyPort = 8080; // defaults to 3001
 
