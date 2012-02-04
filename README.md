@@ -23,3 +23,4 @@ currently supports unity/flash cross domain policy format
 
 ### Parse JSON responses:
 	poolboy.jsonEmitEnabled = true;
+	
