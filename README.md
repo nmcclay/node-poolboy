@@ -21,5 +21,5 @@ currently supports unity/flash cross domain policy format
 	poolboy.crossPolicyEnabled = true;
 	poolboy.crossPolicyPort = 8080; // defaults to 3001
 
-## Parse JSON responses:
+### Parse JSON responses:
 	poolboy.jsonEmitEnabled = true;
