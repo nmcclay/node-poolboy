@@ -10,9 +10,15 @@ TCP Connection Pool for Node.js
 	// create connection pool with request port
 	var poolServer = poolboy.setupConnectionPool(5000);
 	
-TCP requests on port 5000 will now setup a new socket and return the socket port for creating a new tcp connection
+TCP requests to port 5000 will now setup a new socket and return the socket port for a new tcp connection
 
-### Adding new connections:
+### Listening for new connections
+	// event for when a client connects to the request port and creates a new port
+	poolServer.on('newport',function(port) {
+		console.log("new socket created on port " + port.address().port)
+	})
+
+### Manually adding new connections:
 	// assigns new port
 	var newServer = poolboy.add()
 	// assigns a new specific port number
@@ -26,4 +32,10 @@ currently supports unity/flash cross domain policy format
 
 ### Parse JSON responses:
 	poolboy.jsonEmitEnabled = true;
+	
+	poolServer.on('newport',function(port) {
+		port.on('json',function(json) {
+			console.log("got a json object!",json);
+		})
+	})
 	
