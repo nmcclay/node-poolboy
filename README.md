@@ -1,6 +1,9 @@
 TCP Connection Pool for Node.js
 ===
 
+### To install:
+	npm install poolboy
+
 ### To setup:
 	// import poolboy
 	var poolboy = require('poolboy');
