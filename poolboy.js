@@ -83,7 +83,7 @@ var createServer = function(port,persist) {
 var setupCrossDomainPort = function() {
 	var policyServer = createServer(crossPolicyPort,true);
 	policyServer.on('connection',function(socket) {
-		var policyXML = '<?xml version="1.0"?><cross-domain-policy><allow-access-from domain="*" to-ports="5000-6024"/></cross-domain-policy>'
+		var policyXML = '<?xml version="1.0"?><cross-domain-policy><allow-access-from domain="*" to-ports="' + minPortRange + '-' + maxPortRange + '"/></cross-domain-policy>'
 		socket.write(policyXML);
 	});
 }
