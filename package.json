@@ -2,7 +2,7 @@
   "author": "Nicholas McClay <Nikkio101@hotmail.com>",
   "name": "poolboy",
   "description": "TCP connection pool with support for cross domain xml handling",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/nmcclay/node-poolboy",
   "repository": {
     "type": "git",
