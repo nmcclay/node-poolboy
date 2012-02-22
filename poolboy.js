@@ -34,6 +34,7 @@ var addJSONEmitToSocket = function(socket) {
 		var json = false;
 		try {
 			json = JSON.parse(data);
+			console.log("parse: ",json);
 		} catch(err) {
 			console.log("can't parse~!",data);
 		}
@@ -116,9 +117,12 @@ var setupConnectionPool = module.exports.setupConnectionPool = function(reqPort)
 		var newServer = add();
 		var newPort = newServer.address().port;
 		poolSocket.write(String(newPort) + '\n');
+		server.emit('newport',newServer);
 	})
 	
 	if (crossPolicyEnabled) setupCrossDomainPort();
+	
+	poolExists = true;
 	
 	return server;
 };
